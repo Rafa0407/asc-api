@@ -36,7 +36,9 @@ public class ReporteDiarioController {
 
 	@GetMapping("/rep-diario")
 	public List<ReporteDiarioEntity> index () {
-		return repDiarRepo.findAllByOrderByFechaDesc();
+		
+		// Pageable firstPageWithTwentytElements = new PageRequest(page,size);
+		return repDiarRepo.findAllByOrderByFechaDescEmpleadoAsc();
 	}
 
 	@GetMapping("/rep-diario/{idEmpleado}")
@@ -96,9 +98,8 @@ public class ReporteDiarioController {
 		}	
 	}
 
-	@DeleteMapping("/repDiario/{idReporteDiairo}")
+	@DeleteMapping("/rep-diario/{idReporteDiairo}")
 	public boolean deleteReport (@PathVariable int idReporteDiairo){
-
 		repDiarRepo.delete(idReporteDiairo);
 		return true;
 	}

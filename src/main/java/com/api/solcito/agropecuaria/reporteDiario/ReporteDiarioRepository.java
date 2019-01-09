@@ -3,7 +3,7 @@ package com.api.solcito.agropecuaria.reporteDiario;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.springframework.data.domain.Sort;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -12,7 +12,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ReporteDiarioRepository extends JpaRepository <ReporteDiarioEntity, Integer> {
 	
-	public List<ReporteDiarioEntity> findAllByOrderByFechaDesc();
+	// Pageable pageable
+	public List<ReporteDiarioEntity> findAllByOrderByFechaDescEmpleadoAsc();
 	
 	// retorna los salarios diarios de un empleado 
 	@Query ("SELECT new com.api.solcito.agropecuaria.reporteDiario.ReporteDiarioDTO (rd.idSalarioDiario, rd.fecha, rd.montoDiario, emp.idEmpleado, emp.identificacion, emp.nombre, emp.apellido1, emp.apellido2)"
