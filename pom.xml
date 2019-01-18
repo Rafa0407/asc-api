@@ -4,9 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.api.solcito</groupId>
-	<artifactId>agropecuaria</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<artifactId>agropecuariasc</artifactId>
+	<version>1.0.0-RELEASE</version>
+	<packaging>war</packaging>
 
 	<name>agropecuaria</name>
 	<url>http://maven.apache.org</url>
@@ -28,7 +28,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
 		<!-- JPA Data (We are going to use Repositories, Entities, Hibernate, etc...) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -86,7 +92,6 @@
 
 
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -94,6 +99,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		 <finalName>${project.artifactId}</finalName>
 	</build>
 
 </project>

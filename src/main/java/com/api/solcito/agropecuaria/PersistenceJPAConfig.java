@@ -49,7 +49,7 @@ public class PersistenceJPAConfig{
       dataSource.setDriverClassName("com.mysql.jdbc.Driver");
       dataSource.setUrl("jdbc:mysql://localhost:3306/empleados_asc");
       dataSource.setUsername( "root" );
-      dataSource.setPassword( "Rsg0793" );
+      dataSource.setPassword( "s" );
       return dataSource;
    }
  
@@ -67,7 +67,7 @@ public class PersistenceJPAConfig{
        Properties properties = new Properties();
        properties.setProperty(
          "hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");  
-       properties.setProperty("useSSL", "false");
+       properties.setProperty("useSSL", "false"); 
        properties.setProperty("hibernate.id.new_generator_mappings","false");
        properties.setProperty("hibernate.jdbc.time_zone", "UTC");
        return properties;

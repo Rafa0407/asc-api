@@ -53,7 +53,7 @@ public class ReporteDiarioController {
 			return new ResponseEntity<>(repDiarRepo.getReporteDiarioByEmpleado(idEmpleado, fechaI, fechaF), HttpStatus.OK);
 		}
 		else {
-			o.put ("error", "Empleado no existe");
+			o.put ("error", "El empleado no existe");
 			return new ResponseEntity<JSONObject>(o, HttpStatus.BAD_REQUEST);
 		}
 	}
